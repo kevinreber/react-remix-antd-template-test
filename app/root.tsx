@@ -7,6 +7,21 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+export function links() {
+  return [
+    /*
+        Serve AntD styles via the "whole export" approach to be compatible with
+        SSR: https://ant.design/docs/react/server-side-rendering#whole-export
+        
+        Uses a Remix loader to generate and serve the entire AntD CSS file.
+        */
+    {
+      rel: "stylesheet",
+      href: "/antd.css",
+    },
+  ];
+}
+
 export default function App() {
   return (
     <html lang="en">
